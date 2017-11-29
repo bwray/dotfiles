@@ -1,0 +1,21 @@
+# Brian Wray's basic .bash_profile for macOS
+# Just aliases and colors. No paths or anything like that.
+
+# Make the text all colorful
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=DxFxBxExCxegedabagacad
+# export LSCOLORS='rs=0:di=01;33:ln=01;36:mh=00:pi=40;33'
+
+# Take these basic commands and add colors, also let the user know what is happening
+alias ls='ls -GF'
+alias ll='ls -Alh'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -v'
+
+# This will allow for use of vim's regular mode on the command line
+set -o vi
+
+# Assuming iterm2 is installed. If not, as of 29-Nov-2017, wget https://iterm2.com/downloads/stable/iTerm2-3_1_5.zip 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
