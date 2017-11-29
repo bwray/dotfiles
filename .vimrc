@@ -37,8 +37,23 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+" Vundle packages {{{
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-syntastic/syntastic'
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
+" see :h vundle for more details or wiki for FAQ
+" }}}
+"
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " General Config {{{ 
 " set relativenumber		" Line numbers relative to cursor. Useful for jumping around
 set number            " Line numbers relative to start of file
