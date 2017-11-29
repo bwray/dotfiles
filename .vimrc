@@ -1,5 +1,6 @@
 " Created by Brian Wray, 3-Nov-2017
 "
+" To download: git clone https://github.com/bwray/dotfiles.git
 " This is my first attempt at creating my own vim.rc from scratch. I want to
 " understand every line in this document. 
 " Check out https://dougblack.io/words/a-good-vimrc.html
@@ -7,12 +8,41 @@
 " Note that this file should open with lines folded up. Hit <space> to expand
 " any of them.
 "
+" There are some things that need to be installed, namely the colorscheme
+" badwolf, and the syntax checkers for C, Java, and Python.
+"
+" To install badwolfj
+" git clone https://github.com/sjl/badwolf.git
+" mkdir -p ~/.vim/colors
+" mv ~/badwolf/colors/* ~/.vim/colors 
+" rm -r ~/badwolf
+" 
+" To install Vundle (for managing plugins)
+" git clone https://github.com/VundleVim/Vundle.vim.git
+" ~/.vim/bundle/Vundle.vim
+"
+" To install syntastic from within vim:
+" :PluginInstall Syntastic
+"
+" place colors from that download in .vim/colors
+"
 " This must be first, because it changes other options as a side effect
 set nocompatible
+" This is for Vundle
+filetype off 
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"
 " General Config {{{ 
-set relativenumber		" Line numbers relative to cursor. Useful for jumping around
-" set number            " Line numbers relative to start of file
+" set relativenumber		" Line numbers relative to cursor. Useful for jumping around
+set number            " Line numbers relative to start of file
 set backspace=indent,eol,start	" Allow backspace in insert mode
 set history=1000		" Store lots of :cmdline history
 set showcmd			    " Show incomplete cmds down at the bottom
